@@ -1,0 +1,31 @@
+{
+  "name": "Gorila-Mode",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Be a gorila without restrictions.",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "page action demo"
+  },
+  "permissions": [
+    "declarativeContent",
+    "tabs",
+    "http://www.clarin.com/*",
+    "https://www.clarin.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.clarin.com/*", "http://www.clarin.com/*"],
+      "js": ["main.js"]
+    }
+  ]
+}
